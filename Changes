@@ -1,6 +1,11 @@
 Revision history for Pod::Weaver::Section::Support
 
-{{$NEXT}}
+1.008 Unknown
+ - Maintenance resumed by SHLOMIF .
+ - Use https:// for MetaCPAN ( thanks DOLMEN! )
+ - Remove need for autobox ( thanks KENTNL! )
+ - perldoc $module rather than perldoc $main_module (RT#101917)
+  - Thanks to Peter Roberts
 
 1.007 2014-11-04T22:34:49Z UTC
  - Fix the Kwalitee link so it doesn't 404 anymore
