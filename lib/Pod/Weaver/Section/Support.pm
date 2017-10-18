@@ -741,7 +741,7 @@ sub _add_websites_testers {
 	my $first_char = substr( $dist, 0, 1 );
 
 	return _make_item( 'CPAN Testers', <<"EOF" );
-The CPAN Testers is a network of smokers who run automated tests on uploaded CPAN distributions.
+The CPAN Testers is a network of smoke testers who run automated tests on uploaded CPAN distributions.
 
 L<http://www.cpantesters.org/distro/$first_char/$dist>
 EOF

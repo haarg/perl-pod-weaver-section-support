@@ -9,6 +9,9 @@ Revision history for Pod::Weaver::Section::Support
  - Remove link to CPAN forum as it was discontinued.
   - https://rt.cpan.org/Ticket/Display.html?id=101918
   - Thanks to PWR for the report.
+ - Fix https://rt.cpan.org/Ticket/Display.html?id=119990
+  - Rephrase as 'smoke testers'.
+  - Thanks to BKB .
 
 1.007 2014-11-04T22:34:49Z UTC
  - Fix the Kwalitee link so it doesn't 404 anymore
