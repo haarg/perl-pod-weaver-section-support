@@ -1,6 +1,6 @@
 Revision history for Pod::Weaver::Section::Support
 
-1.008 Unknown
+1.008 2017-10-18
  - Maintenance resumed by SHLOMIF .
  - Use https:// for MetaCPAN ( thanks DOLMEN! )
  - Remove need for autobox ( thanks KENTNL! )
