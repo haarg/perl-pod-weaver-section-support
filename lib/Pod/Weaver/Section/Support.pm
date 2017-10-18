@@ -93,7 +93,7 @@ Specify what website links you want to see. This is an array, and you can pick a
 specify it as a comma-delimited string. The ordering of the options are important, as they are reflected in
 the final POD.
 
-Valid options are: "none", "metacpan", "search", "rt", "anno", "ratings", "forum", "kwalitee", "testers", "testmatrix", "deps" and "all".
+Valid options are: "none", "metacpan", "search", "rt", "anno", "ratings", "kwalitee", "testers", "testmatrix", "deps" and "all".
 
 The default is "all".
 
@@ -103,7 +103,6 @@ The default is "all".
 	rt		- https://rt.cpan.org/Public/Dist/Display.html?Name=$dist
 	anno		- http://annocpan.org/dist/$dist
 	ratings		- http://cpanratings.perl.org/d/$dist
-	forum		- http://cpanforum.com/dist/$dist
 	kwalitee	- http://cpants.perl.org/dist/$dist
 	testers		- http://cpantesters.org/distro/$first_char/$dist
 	testmatrix	- http://matrix.cpantesters.org/?dist=$dist
@@ -112,7 +111,7 @@ The default is "all".
 	# in weaver.ini
 	[Support]
 	websites = search
-	websites = forum
+	websites = metacpan
 	websites = testers , testmatrix
 
 P.S. If you know other websites that I should include here, please let me know!
@@ -628,14 +627,14 @@ sub _add_websites {
 
 	# sanity check
 	foreach my $type ( @{ $self->websites } ) {
-		if ( $type !~ /^(?:metacpan|search|rt|anno|ratings|forum|kwalitee|testers|testmatrix|deps|all)$/i ) {
+		if ( $type !~ /^(?:metacpan|search|rt|anno|ratings|kwalitee|testers|testmatrix|deps|all)$/i ) {
 			$self->log_fatal( "Unknown website type: $type" );
 		}
 	}
 
 	# Set the default ordering for "all"
 	if ( grep { $_ eq 'all' } @{ $self->websites } ) { ## no critic ( BuiltinFunctions::ProhibitBooleanGrep )
-		@{ $self->websites } = qw( metacpan search rt anno ratings forum kwalitee testers testmatrix deps );
+		@{ $self->websites } = qw( metacpan search rt anno ratings kwalitee testers testmatrix deps );
 	}
 
 	# Make the website links!
@@ -723,16 +722,6 @@ sub _add_websites_ratings {
 The CPAN Ratings is a website that allows community ratings and reviews of Perl modules.
 
 L<http://cpanratings.perl.org/d/$dist>
-EOF
-}
-
-sub _add_websites_forum {
-	my $dist = shift;
-
-	return _make_item( 'CPAN Forum', <<"EOF" );
-The CPAN Forum is a web forum for discussing Perl modules.
-
-L<http://cpanforum.com/dist/$dist>
 EOF
 }
 
