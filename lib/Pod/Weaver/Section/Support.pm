@@ -9,6 +9,10 @@ with 'Pod::Weaver::Role::Section' => { -version => '3.100710' };
 
 sub mvp_multivalue_args { qw( websites irc bugs_content email_content irc_content repository_content websites_content ) }
 
+=head1 NAME
+
+Pod::Weaver::Section::Support - Add a SUPPORT section to your POD
+
 =attr all_modules
 
 Enable this if you want to add the SUPPORT section to all the modules in a dist, not only the main one.
