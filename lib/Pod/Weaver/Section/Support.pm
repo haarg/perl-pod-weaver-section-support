@@ -410,6 +410,9 @@ sub _add_perldoc {
 	# Get the name for the module
 	my $module = PPIx::DocumentName->extract( $ppi_doc );
 
+    # Avoid trailing space and an empty directive
+	return () if ! length $module;
+
 	# TODO add language detection as per RT#63726
 
 	return Pod::Elemental::Element::Nested->new( {
